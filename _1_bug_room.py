@@ -12,10 +12,11 @@ class BugRoom(room.Room):
             if instruct.lower() == "y":
                 print("You roll the log over to reveal three brightly coloured bugs.")
                 print("You watch the bugs for a little while and notice they flash in a pattern.")
-                print("Red.")
-                print("Blue.")
-                print("Blue.")
-                print("Green.")
+                print("Red, Blue, Green, Blue, Red.")
+                print("...")
+                print("Red, Blue, Green, Blue, Red.")
+                print("...")
+                print("Red, Blue, Green, Blue, Red.")
                 ask = False
             elif instruct.lower() == "n":
                 ask = False
@@ -27,17 +28,18 @@ class BugRoom(room.Room):
             print("You enter a clearing and look around.")
             print("You spot a large rotting log off at the edge of the clearing.")
             self.roll_log()
-            print("You continue your journey for help.")
+            print("You roll the log back over and continue your journey for help.")
 
         else:
             print("You walk back to the clearing with the log.")
             print("You spot the large rotting log off at the edge of the clearing.")
             print("You roll the log over to reveal three brightly coloured bugs.")
             print("You watch the bugs for a little while and notice they flash in a pattern.")
-            print("Red.")
-            print("Blue.")
-            print("Blue.")
-            print("Green.")
+            print("Red, Blue, Green, Blue, Red.")
+            print("...")
+            print("Red, Blue, Green, Blue, Red.")
+            print("...")
+            print("Red, Blue, Green, Blue, Red.")
 
     def choose_next_room(self):
         print(self.has_been_visited)

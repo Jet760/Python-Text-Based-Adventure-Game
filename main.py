@@ -25,7 +25,7 @@ def game_instructions():
         print("Please enter Y for yes and N for no:")
         instruct = input("> ")
         if instruct.lower() == "y":
-            print("GAME INSTRUSTIIONSSSS")
+            print("GAME INSTRUCTIONS")
             ask = False
         elif instruct.lower() == "n":
             ask = False
