@@ -13,3 +13,7 @@ class Player:
 
     def add_to_backpack(self, item):
         pass
+
+    def check_backpack(self, item):
+        if
+

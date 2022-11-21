@@ -6,6 +6,9 @@ from _4_mushroom_room import MushroomRoom as Room4
 from _5_bug_puzzle_room_m import BugPuzzleRoomM as Room5
 from _6_bug_puzzle_room_y import BugPuzzleRoomY as Room6
 from _7_death_room_waterfall import DeathRoomWaterfall as Room7
+from _8_flower_room_m import FlowerRoomM as Room8
+from _9_flower_room_y import FlowerRoomY as Room9
+from _10_death_room_pit import DeathRoomPit as Room10
 
 import player
 
@@ -18,9 +21,12 @@ room4 = Room4("mushroom", 4, east=5, south=6)
 room5 = Room5("bug puzzle m", 5, north=7, south=8)
 room6 = Room6("bug puzzle y", 6, south=9, west=10)
 room7 = Room7("death room waterfall", 7)
+room8 = Room8("flower m", 8, south=11)
+room9 = Room9("flower y", 9, east=11)
+room10 = Room10("death room pit", 10, player_object, east=9)
 
-room_list = [room0, room1, room2, room3, room4, room5, room6, room7]
-current_room = room_list[7]
+room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10]
+current_room = room_list[10]
 
 game_running = True
 restart_game = False
