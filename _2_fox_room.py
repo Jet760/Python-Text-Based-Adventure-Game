@@ -35,6 +35,8 @@ class FoxRoom(room.Room):
                     elif instruct2.lower() == "2":
                         self.bought_drink = True
                         ask2 = False
+                    elif instruct2.lower() == "i":
+                        self.player.check_backpack()
                     else:
                         continue
                 print("You thank the fox.")
@@ -43,6 +45,8 @@ class FoxRoom(room.Room):
             elif instruct.lower() == "n":
                 print("You tell the fox no thank you.")
                 ask = False
+            elif instruct.lower() == "i":
+                self.player.check_backpack()
             else:
                 continue
         print("You turn and continue walking down the path")

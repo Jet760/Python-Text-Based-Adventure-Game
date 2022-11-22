@@ -44,6 +44,8 @@ class MushroomRoom(room.Room):
             elif instruct == "4":
                 print("You don't pick up any of the mushrooms.")
                 ask = False
+            elif instruct.lower() == "i":
+                self.player.check_backpack()
             else:
                 continue
         print("You stand up and keep walking down the path.")

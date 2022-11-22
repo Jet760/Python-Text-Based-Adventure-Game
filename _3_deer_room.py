@@ -33,6 +33,8 @@ class DeerRoom(room.Room):
                 print("You quickly turn away and scurry on down the path.")
                 print("You hear the deer calling after you but you ignore it.")
                 ask = False
+            elif instruct.lower() == "i":
+                self.player.check_backpack()
             else:
                 continue
 

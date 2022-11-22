@@ -31,6 +31,8 @@ class FlowerRoom(room.Room):
                 ask = False
             elif instruct.lower() == "n":
                 ask = False
+            elif instruct.lower() == "i":
+                self.player.check_backpack()
             else:
                 continue
             print("You take one last look around at the flowers as follow the path onwards,")

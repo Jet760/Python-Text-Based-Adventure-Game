@@ -9,7 +9,7 @@ class Room:
             :param west: room number
             """
 
-    def __init__(self, name, number, north=None, east=None, south=None, west=None):
+    def __init__(self, player, name, number, north=None, east=None, south=None, west=None):
         """
         sfsdfsf
         :param name: room name
@@ -28,6 +28,7 @@ class Room:
         self.room_west = west
         self.room_list, self.direction_list = self.room_choices()
         self.item = None
+        self.player = player
 
     def room_script(self):
         print("room list")
@@ -72,6 +73,8 @@ class Room:
                 result = self.room_south
             elif choice.lower() == "w":
                 result = self.room_west
+            elif choice.lower() == "i":
+                self.player.check_backpack()
             else:
                 print("Incorrect input, please try again")
                 continue

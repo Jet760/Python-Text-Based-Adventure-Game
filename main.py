@@ -10,20 +10,22 @@ from _8_flower_room_m import FlowerRoomM as Room8
 from _9_flower_room_y import FlowerRoomY as Room9
 from _10_death_room_pit import DeathRoomPit as Room10
 
+import backpack
 import player
 
-player_object = player.Player()
-room0 = Room0("start", 0, south=1)
-room1 = Room1("bug", 1, east=2, south=3)
-room2 = Room2("fox", 2, south=4)
-room3 = Room3("deer", 3, east=4)
-room4 = Room4("mushroom", 4, east=5, south=6)
-room5 = Room5("bug puzzle m", 5, north=7, south=8)
-room6 = Room6("bug puzzle y", 6, south=9, west=10)
-room7 = Room7("death room waterfall", 7)
-room8 = Room8("flower m", 8, south=11)
-room9 = Room9("flower y", 9, east=11)
-room10 = Room10("death room pit", 10, player_object, east=9)
+backpack = backpack.BackPack()
+player_object = player.Player(backpack)
+room0 = Room0(player_object, "start", 0, south=1)
+room1 = Room1(player_object, "bug", 1, east=2, south=3)
+room2 = Room2(player_object, "fox", 2, south=4)
+room3 = Room3(player_object, "deer", 3, east=4)
+room4 = Room4(player_object, "mushroom", 4, east=5, south=6)
+room5 = Room5(player_object, "bug puzzle m", 5, north=7, south=8)
+room6 = Room6(player_object, "bug puzzle y", 6, south=9, west=10)
+room7 = Room7(player_object, "death room waterfall", 7)
+room8 = Room8(player_object, "flower m", 8, south=11)
+room9 = Room9(player_object, "flower y", 9, east=11)
+room10 = Room10(player_object, "death room pit", 10, east=9)
 
 room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10]
 current_room = room_list[10]
@@ -70,12 +72,23 @@ def game_over():
 
 
 def test():
-    print("________________________________________________________________")
-    print(" Please enter one of the listed options to enter the next area ")
-    print("________________________________________________________________")
+    backpack.add("a")
+    backpack.add("c")
+    backpack.add("b")
+    backpack.add("h")
+    backpack.add("j")
+    backpack.add("jb")
+    backpack.add("k")
+    backpack.add("ba")
+    backpack.add("bb")
+    backpack.add("x")
+    backpack.add("y")
+    backpack.add("z")
+    backpack.add("rope")
+
 
 if __name__ == "__main__":
-    #test()
+    test()
     print(f"Welcome to the game {player_object.name}")
     game_instructions()
 
@@ -94,5 +107,3 @@ if __name__ == "__main__":
             current_room = room_list[int(current_room.choose_next_room())]
 
     print("outside game")
-
-

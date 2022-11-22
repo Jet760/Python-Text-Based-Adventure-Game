@@ -28,6 +28,8 @@ class BugRoom(room.Room):
                 print("The gate swings open.")
                 print("You walk through and keep following the path though the forrest.")
                 ask = False
+            elif instruct.lower() == "i":
+                self.player.check_backpack()
             else:
                 print("You push the rocks.")
                 print("...")
@@ -64,6 +66,8 @@ class BugRoom(room.Room):
                                 elif instruct3.lower() == "n":
                                     print("You walk back to the stone wall without looking under the log.")
                                     ask3 = False
+                                elif instruct3.lower() == "i":
+                                    self.player.check_backpack()
                                 else:
                                     continue
                             try_counter = 0
@@ -71,6 +75,8 @@ class BugRoom(room.Room):
                         elif instruct2.lower() == "n":
                             try_counter = 0
                             ask2 = False
+                        elif instruct2.lower() == "i":
+                            self.player.check_backpack()
                         else:
                             continue
                 continue

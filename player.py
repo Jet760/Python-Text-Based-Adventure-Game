@@ -1,19 +1,19 @@
 class Player:
 
-    def __init__(self):
+    def __init__(self, backpack):
         self.name = self.ask_player_name()
-        self.backpack = None
+        self.backpack = backpack
 
     def ask_player_name(self):
         name = input("Please enter your name: ")
         return name
 
-    def input_backpack(self, backpack):
-        self.backpack = backpack
-
     def add_to_backpack(self, item):
-        pass
+        self.backpack.add(item)
 
-    def check_backpack(self, item):
-        if
+    def check_backpack(self):
+        self.backpack.list()
+
+    def find_item_backpack(self, item):
+        return self.backpack.in_backpack(item)
 

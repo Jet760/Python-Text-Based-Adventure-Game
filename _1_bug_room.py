@@ -22,6 +22,8 @@ class BugRoom(room.Room):
             elif instruct.lower() == "n":
                 print("You walk by the log and continue your journey for help.")
                 ask = False
+            elif instruct.lower() == "i":
+                self.player.check_backpack()
             else:
                 continue
 
