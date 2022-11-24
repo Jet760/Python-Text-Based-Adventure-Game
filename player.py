@@ -17,3 +17,11 @@ class Player:
     def find_item_backpack(self, item):
         return self.backpack.in_backpack(item)
 
+    def remove_item_from_backpack(self, item):
+        if item is not None:
+            self.backpack.remove_item(item)
+
+    def get_item_name(self, position):
+        return self.backpack.get_item_name(position)
+
+

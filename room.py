@@ -89,4 +89,7 @@ class Room:
     def room_actions(self):
         return None
 
+    def update_rooms(self):
+        self.room_list, self.direction_list = self.room_choices()
+
 

@@ -9,6 +9,7 @@ from _7_death_room_waterfall import DeathRoomWaterfall as Room7
 from _8_flower_room_m import FlowerRoomM as Room8
 from _9_flower_room_y import FlowerRoomY as Room9
 from _10_death_room_pit import DeathRoomPit as Room10
+from _12_witch_clearing_room import WitchClearingRoom as Room12
 
 import backpack
 import player
@@ -23,12 +24,13 @@ room4 = Room4(player_object, "mushroom", 4, east=5, south=6)
 room5 = Room5(player_object, "bug puzzle m", 5, north=7, south=8)
 room6 = Room6(player_object, "bug puzzle y", 6, south=9, west=10)
 room7 = Room7(player_object, "death room waterfall", 7)
-room8 = Room8(player_object, "flower m", 8, south=11)
-room9 = Room9(player_object, "flower y", 9, east=11)
+room8 = Room8(player_object, "flower m", 8, south=12)
+room9 = Room9(player_object, "flower y", 9, east=12)
 room10 = Room10(player_object, "death room pit", 10, east=9)
+room12 = Room12(player_object, "witch garden", 12, west=13)
 
-room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10]
-current_room = room_list[10]
+room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room12]
+current_room = room_list[11]
 
 game_running = True
 restart_game = False
@@ -84,7 +86,9 @@ def test():
     backpack.add("x")
     backpack.add("y")
     backpack.add("z")
-    backpack.add("rope")
+    #backpack.add("marigold")
+    backpack.add("yarrow")
+    #backpack.add("rope")
 
 
 if __name__ == "__main__":

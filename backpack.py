@@ -76,3 +76,7 @@ class BackPack:
             if position != False:
                 self._backpack.pop(position)
 
+    def get_item_name(self, position):
+        if position is not None or position is not False:
+            return self._backpack[position]
+
