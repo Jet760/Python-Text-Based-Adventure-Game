@@ -4,11 +4,12 @@ import room
 class BugRoom(room.Room):
 
     def room_script(self):
-        self.has_been_visited = True
         print("You come across an old stone wall blocking the path. ")
         print("The wall is overgrown with ivy and lichen. ")
         print("The path leads to a wooden gate in the wall. ")
         print("You pull back the ivy and try push the gate open. ")
+        input("-press enter to continue-")
+        print("")
         print("It seems to be locked.")
         print("You look to the side and notice three coloured stones jutting out of the wall:")
         print("The stones are coloured Green, Blue, Red")
@@ -27,6 +28,8 @@ class BugRoom(room.Room):
                 print("You hear a click.")
                 print("The gate swings open.")
                 print("You walk through and keep following the path though the forrest.")
+                input("-press enter to continue-")
+                print("")
                 ask = False
             elif instruct.lower() == "i":
                 self.player.check_backpack()
@@ -62,9 +65,13 @@ class BugRoom(room.Room):
                                     print("...")
                                     print("Red, Blue, Green, Blue, Red.")
                                     print("You walk back to the stone wall ready to try again.")
+                                    input("-press enter to continue-")
+                                    print("")
                                     ask3 = False
                                 elif instruct3.lower() == "n":
                                     print("You walk back to the stone wall without looking under the log.")
+                                    input("-press enter to continue-")
+                                    print("")
                                     ask3 = False
                                 elif instruct3.lower() == "i":
                                     self.player.check_backpack()

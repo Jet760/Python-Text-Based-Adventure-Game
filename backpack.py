@@ -2,16 +2,6 @@ class BackPack:
     """
     BackPack Class
 
-
-
-    ToDo: [X] Instantiate backpack
-    ToDo: [X] Add Item
-    ToDo: [ ] Remove Item
-    ToDo: [X] List Items
-    ToDo: [X] Count items
-    ToDo: [X] in backpack (Search for Item - Student to do)
-    ToDo: [X] Sort Items
-
     """
 
     def __init__(self, items=None):
@@ -80,3 +70,5 @@ class BackPack:
         if position is not None or position is not False:
             return self._backpack[position]
 
+    def reset(self):
+        self._backpack = []

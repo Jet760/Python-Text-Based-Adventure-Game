@@ -9,7 +9,10 @@ from _7_death_room_waterfall import DeathRoomWaterfall as Room7
 from _8_flower_room_m import FlowerRoomM as Room8
 from _9_flower_room_y import FlowerRoomY as Room9
 from _10_death_room_pit import DeathRoomPit as Room10
+from _11_witch_house_room import WitchHouseRoom as Room11
 from _12_witch_clearing_room import WitchClearingRoom as Room12
+from _13_fae_encounter_room import FaeEncounterRoom as Room13
+from _14_crossroads_puzzle_room import CrossRoadsRoom as Room14
 
 import backpack
 import player
@@ -27,10 +30,13 @@ room7 = Room7(player_object, "death room waterfall", 7)
 room8 = Room8(player_object, "flower m", 8, south=12)
 room9 = Room9(player_object, "flower y", 9, east=12)
 room10 = Room10(player_object, "death room pit", 10, east=9)
+room11 = Room11(player_object, "witch house", 11, west=12)
 room12 = Room12(player_object, "witch garden", 12, west=13)
+room13 = Room13(player_object, "fae encounter", 13, south=14)
+room14 = Room14(player_object, "fae encounter", 14, west=15, south=16, east=15)
 
-room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room12]
-current_room = room_list[11]
+room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12, room13]
+current_room = room_list[0]
 
 game_running = True
 restart_game = False
@@ -63,6 +69,8 @@ def game_over():
             current_room = room_list[0]
             global restart_game
             restart_game = True
+            for room in room_list:
+                room.has_been_visited = False
             return True
         elif instruct.lower() == "n":
             global game_running
@@ -88,7 +96,7 @@ def test():
     backpack.add("z")
     #backpack.add("marigold")
     backpack.add("yarrow")
-    #backpack.add("rope")
+    backpack.add("rope")
 
 
 if __name__ == "__main__":
@@ -97,6 +105,11 @@ if __name__ == "__main__":
     game_instructions()
 
     while game_running:
+        # DEBUG
+        print(backpack.list())
+        if restart_game:
+            backpack.reset()
+            print(backpack.list())
         restart_game = False
         current_room.room_script()
         item = current_room.room_actions()

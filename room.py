@@ -51,7 +51,6 @@ class Room:
         if self.room_west is not None:
             room_list.append(self.room_west)
             direction_list.append("W")
-
         return room_list, direction_list
 
     def choose_next_room(self):
@@ -66,13 +65,17 @@ class Room:
             choice = input("> ")
 
             if choice.lower() == "n":
-                result = self.room_north
+                if 'N' in self.direction_list:
+                    result = self.room_north
             elif choice.lower() == "e":
-                result = self.room_east
+                if 'E' in self.direction_list:
+                    result = self.room_east
             elif choice.lower() == "s":
-                result = self.room_south
+                if 'S' in self.direction_list:
+                    result = self.room_south
             elif choice.lower() == "w":
-                result = self.room_west
+                if 'W' in self.direction_list:
+                    result = self.room_west
             elif choice.lower() == "i":
                 self.player.check_backpack()
             else:
@@ -83,7 +86,6 @@ class Room:
                 loop = False
             else:
                 print("Incorrect input, please try again")
-
         return result
 
     def room_actions(self):

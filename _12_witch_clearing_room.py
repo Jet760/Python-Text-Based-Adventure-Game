@@ -14,6 +14,7 @@ class WitchClearingRoom(room.Room):
             print("You walk down the path for a while until you come to the next clearing.")
             print("You come across a lovely garden surrounded by a low stone wall.")
             input("-press enter to continue-")
+            print("")
             print("Suddenly you notice there is a person in the garden! They are bent over some plants.")
             print('"Hi!" you call out')
             print("She stands up with a start.")
@@ -41,21 +42,25 @@ class WitchClearingRoom(room.Room):
                     print('"My name is Kiki!" she replies enthusiastically, "what\'s yours?"')
                     print(f'"My name is {self.player.name}"')
                     input("-press enter to continue-")
+                    print("")
                 elif instruct == "2":
                     print('"Why do you live out here, in the middle of the forest?" you ask')
                     print('"I\'m a witch!" she replies, "what are YOU doing in the middle of the forest?"')
                     print('You explain about your car breaking down and told her your journey so far.')
                     print('"Wow that\'s a lot for one day" she says')
                     input("-press enter to continue-")
+                    print("")
                 elif instruct == "3":
                     print('"Your garden looks so lovely!" you say')
                     print('"Thank you!" she smiles proudly')
                     input("-press enter to continue-")
+                    print("")
                 elif instruct == "4":
                     print('"Would you be able to direct me to the town?" you ask')
                     print('"You are on the right path! Keep following it and it will take you where you need to go!" '
                           'she replies')
                     input("-press enter to continue-")
+                    print("")
                 elif instruct == "5":
                     if self.has_flower:
                         print("You remember the flower you picked up earlier and decide to give it to her.")
@@ -65,6 +70,7 @@ class WitchClearingRoom(room.Room):
                         print('"OMG YES!!" she squeals and takes the flower from you')
                         print('"Thank you so much!!"')
                         input("-press enter to continue-")
+                        print("")
                         print('"If you would like you can come inside my cottage for some tea!" she says, beaming')
                         print('"Just follow this path through the garden EAST and you will find it."')
                         self.player.remove_item_from_backpack(self.flower_name)
@@ -72,11 +78,14 @@ class WitchClearingRoom(room.Room):
                         self.room_east = 11
                         self.update_rooms()
                         input("-press enter to continue-")
+                        print("")
                     else:
                         print("You look in your backpack and can't find the flower")
                 elif instruct == "9":
                     print('"I better head back inside, it was nice talking to you" she says')
                     print('"Thanks for the chat!" you say as you turn and head back to the path')
+                    input("-press enter to continue-")
+                    print("")
                     ask = False
                 elif instruct.lower() == "i":
                     self.player.check_backpack()
@@ -88,3 +97,5 @@ class WitchClearingRoom(room.Room):
             print("You look around and admire her luscious plants.")
             print("You make your way slowly down the garden path.")
             print("You close the little wooden gate behind you.")
+            input("-press enter to continue-")
+            print("")

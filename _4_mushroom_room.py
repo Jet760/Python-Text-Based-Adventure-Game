@@ -11,16 +11,21 @@ class MushroomRoom(room.Room):
         print("As you walk down the path you notice different three clumps of mushrooms ")
         print("    growing on the side of the path.")
         print("You crouch down to take a better look at them.")
-        print("...")
+        input("-press enter to continue-")
+        print("")
         print("The first one is some Scarlet Elf Cups ")
         print("They are vivid scarlet and their mushroom cap is cup shaped.")
-        print("...")
+        input("-press enter to continue-")
+        print("")
         print("The second is some Fly Agaric ")
-        print("They are the classic toad stool shape with white stalk, and red cap that is spotted with white dots.")
-        print("...")
+        print("They are the classic toad stool shape with a white stalk, and red cap that is spotted with white dots.")
+        input("-press enter to continue-")
+        print("")
         print("The third is some Common Puffball ")
         print("Their cap is a round bulb coming from the end of the stalk, the")
         print("    surface of the mushroom is cream in colour and is covered in tiny pyramid-shaped pearls")
+        input("-press enter to continue-")
+        print("")
         ask = True
         while ask:
             print("Would you like to pick one of the mushrooms?")
@@ -49,6 +54,8 @@ class MushroomRoom(room.Room):
             else:
                 continue
         print("You stand up and keep walking down the path.")
+        input("-press enter to continue-")
+        print("")
 
     def room_actions(self):
         if self.picked_mushroom is not False:

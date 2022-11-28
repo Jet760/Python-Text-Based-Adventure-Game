@@ -18,9 +18,13 @@ class BugRoom(room.Room):
                 print("...")
                 print("Red, Blue, Green, Blue, Red.")
                 print("You roll the log back over and continue your journey for help.")
+                input("-press enter to continue-")
+                print("")
                 ask = False
             elif instruct.lower() == "n":
                 print("You walk by the log and continue your journey for help.")
+                input("-press enter to continue-")
+                print("")
                 ask = False
             elif instruct.lower() == "i":
                 self.player.check_backpack()
@@ -28,23 +32,14 @@ class BugRoom(room.Room):
                 continue
 
     def room_script(self):
-        if self.has_been_visited is False:
-            print("You enter a clearing and look around.")
-            print("You spot a large rotting log off at the edge of the clearing.")
-            self.roll_log()
-
-
-
+        print("You enter a clearing and look around.")
+        print("You spot a large rotting log off at the edge of the clearing.")
+        self.roll_log()
 
     def choose_next_room(self):
-        if not self.has_been_visited:
-            self.has_been_visited = True
-            result = super().choose_next_room()
-            print(result)
-            return result
-
-        else:
-            return
+        result = super().choose_next_room()
+        print(result)
+        return result
 
 
 

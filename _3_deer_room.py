@@ -11,6 +11,8 @@ class DeerRoom(room.Room):
         print("You walk down the path for a while until you come to the next clearing.")
         print('"Hey! You there!"')
         print('"Could you please help me!!"')
+        input("-press enter to continue-")
+        print("")
         print("To your surprise, you turn to see a deer standing next to a tree.")
         print("You walk closer and notice that the deer's back legs are ")
         print("    completely tangled in a rope attached to the tree.")
@@ -26,12 +28,16 @@ class DeerRoom(room.Room):
                 print("You tell the deer it's no worries and put the rope in your backpack ")
                 print("    so it can't trap anyone else.")
                 print("You turn and walk down the path, waving goodbye to the deer.")
+                input("-press enter to continue-")
+                print("")
                 self.took_rope = True
                 ask = False
             elif instruct.lower() == "n":
                 print("You apologise to the deer and explain you are in a hurry.")
                 print("You quickly turn away and scurry on down the path.")
                 print("You hear the deer calling after you but you ignore it.")
+                input("-press enter to continue-")
+                print("")
                 ask = False
             elif instruct.lower() == "i":
                 self.player.check_backpack()

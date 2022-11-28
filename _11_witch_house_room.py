@@ -2,8 +2,6 @@ import room
 
 
 class WitchHouseRoom(room.Room):
-    def __init__(self, name, number, north=None, east=None, south=None, west=None):
-        super().__init__(name, number, north, east, south, west)
 
     def room_script(self):
         self.has_been_visited = True
@@ -13,13 +11,15 @@ class WitchHouseRoom(room.Room):
         print("There is a little wooden sign picturing a lady riding a broomstick.")
         print('"Kiki\'s Cottage" is written on the sign.')
         input("-press enter to continue-")
+        print("")
         print("You push open the door and peer inside.")
         print('"I\'m glad you decide to stay for tea!" calls out Kiki from the kitchen')
         print("You walk through the door and shut it behind you.")
         print("You feel something pressing against your legs.")
         print("You look down to see a black cat!")
         input("-press enter to continue-")
-        print(f'"That\'s Jiji! Say hello to {self.player.name} Jiji."')
+        print("")
+        print(f'"That\'s Jiji! Say hello to {self.player.name}, Jiji."')
         print("Jiji inspects you with his eyes for a few seconds")
         print('"Hello" he says curtly, "I\'m Jiji, Kiki\'s cat.')
         print('"You can talk??" you blurt out')
@@ -41,26 +41,30 @@ class WitchHouseRoom(room.Room):
             instruct = input("> ")
             if instruct == "1":
                 print('"How did you become a witch Kiki?" you ask')
-                print('"I was born a witch" she replies, "my mother was a witch, so when I turned 11 I left '
+                print('"I was born a witch" she replies, "my mother was a witch, so when I turned 13 I left '
                       'home to begin my journey as a witch"')
                 print('"Wow so young"')
                 input("-press enter to continue-")
+                print("")
             elif instruct == "2":
                 print('"What sort of witch are you Kiki? What sort of magic do you do?" you ask')
                 print('"I started out doing deliveries on my broomstick."')
                 print('"Now I tend to my garden and make potions to help the folk that live in this forest."')
                 input("-press enter to continue-")
+                print("")
             elif instruct == "3":
                 print('You take a sip of your tea')
                 print('It\'s delicious!')
                 sip_counter += 1
                 input("-press enter to continue-")
+                print("")
             elif instruct == "9":
                 print('"Thank you for the chat and the tea, it was lovely!"')
                 print('You stand up.')
-                print('"Thank you for stopping by! Jiji and I dont geet visitors very often do we Jiji"')
+                print('"Thank you for stopping by! Jiji and I dont get visitors very often do we Jiji?"')
                 print('"That\'s probably for the best" Jiji muttered under his breath')
                 input("-press enter to continue-")
+                print("")
                 if sip_counter < 6:
                     print("You realise you haven't finished your tea.")
                     ask2 = True

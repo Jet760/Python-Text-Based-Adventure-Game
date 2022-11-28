@@ -11,6 +11,8 @@ class FoxRoom(room.Room):
         print("You walk down the path for a while until you come to the next clearing.")
         print('"Hey! You there!"')
         print('"Would you like to buy some lemonade?"')
+        input("-press enter to continue-")
+        print("")
         print("To your surprise, you turn to see a fox sitting at a lemonade stand.")
         print('"Well? What\'s it gonna be?"')
         print("You brought your wallet with you from the car and have some coins.")
@@ -31,6 +33,8 @@ class FoxRoom(room.Room):
                     if instruct2.lower() == "1":
                         print("You sip on the lemonade.")
                         print("It tastes really good!.")
+                        input("-press enter to continue-")
+                        print("")
                         ask2 = False
                     elif instruct2.lower() == "2":
                         self.bought_drink = True
@@ -41,9 +45,13 @@ class FoxRoom(room.Room):
                         continue
                 print("You thank the fox.")
                 print("You feel refreshed and have renewed strength to complete your journey.")
+                input("-press enter to continue-")
+                print("")
                 ask = False
             elif instruct.lower() == "n":
                 print("You tell the fox no thank you.")
+                input("-press enter to continue-")
+                print("")
                 ask = False
             elif instruct.lower() == "i":
                 self.player.check_backpack()

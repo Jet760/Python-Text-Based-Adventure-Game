@@ -1,9 +1,10 @@
 import super_death_room
 
 
-class DeathRoomPit(super_death_room.DeathRoom):
+class DeathRoomWrongWay(super_death_room.DeathRoom):
 
     def room_script(self):
+        # TODO:
         print("You continue down the path, when suddenly the ground gives way underneath you.")
         print("You find yourself at the bottom of a deep hole.")
         print("You shout and shout, hoping someone with help you.")
