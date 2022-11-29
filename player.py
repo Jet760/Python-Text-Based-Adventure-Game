@@ -24,4 +24,8 @@ class Player:
     def get_item_name(self, position):
         return self.backpack.get_item_name(position)
 
+    def find_item_and_return_name(self, item):
+        position = self.find_item_backpack(item)
+        return self.get_item_name(position)
+
 

@@ -69,6 +69,8 @@ class BackPack:
     def get_item_name(self, position):
         if position is not None or position is not False:
             return self._backpack[position]
+        else:
+            return False
 
     def reset(self):
         self._backpack = []
