@@ -63,7 +63,35 @@ def game_instructions():
         print("Please enter Y for yes and N for no:")
         instruct = input("> ")
         if instruct.lower() == "y":
-            print("GAME INSTRUCTIONS")
+            print("-GAME INSTRUCTIONS-")
+            print("Welcome to Path to Faylight")
+            print("HOW TO PLAY: ")
+            print("In the game you will be given options on how to interact")
+            print("for example:")
+            print("")
+            ask2 = True
+            while ask2:
+                print("Please enter Q to pick this option:")
+                answer = input(">")
+                if answer == answer.lower():
+                    print("Nice!")
+                    print("")
+                    print("During the game, to break up the text, this message will appear:")
+                    input("-press enter to continue-")
+                    print("")
+                    print("Looks like you have got the hang of this")
+                    print("")
+                    print("In the game you have a BACKPACK")
+                    print("to open your backpack and view the contents, enter: ")
+                    print("i")
+                    print("during any option selection.")
+                    print("")
+                    print("Your aim for the game is to reach the town.")
+                    print("There will be puzzles and characters along the way.")
+                    print("That\'s it! Have fun! :)")
+                    ask2 = False
+                else:
+                    continue
             ask = False
         elif instruct.lower() == "n":
             ask = False
