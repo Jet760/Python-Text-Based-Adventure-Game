@@ -29,6 +29,7 @@ class BackPack:
         else:
             print("The backpack is empty")
         print("You zip back up your backpack")
+        print("")
 
     def add(self, item):
         if item is not None:

@@ -2,8 +2,8 @@ import room
 
 
 class MushroomRoom(room.Room):
-    def __init__(self, name, number, north=None, east=None, south=None, west=None):
-        super().__init__(name, number, north, east, south, west)
+    def __init__(self, player, name, number, north=None, east=None, south=None, west=None):
+        super().__init__(player, name, number, north, east, south, west)
         self.picked_mushroom = False
 
     def room_script(self):
