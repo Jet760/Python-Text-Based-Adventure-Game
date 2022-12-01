@@ -20,13 +20,12 @@ class DeathRoomWrongWay(super_death_room.DeathRoom):
         input("-press enter to continue-")
         print("")
         print("You decide to sit down against a tree and have a quick rest.")
-        item = self.player.find_item_backpack("lemonade")
-        # DEBUG
-        print(item)
-        if item is False:
-            print(item)
+        item = self.player.find_item_and_return_name("lemonade")
+        if item != "lemonade":
             item = self.player.find_item_and_return_name("tea")
-        if item != False:
+            if item != "tea":
+                item = False
+        if item is not False:
             input("-press enter to continue-")
             print("")
             print(f"You grab your backpack and take out the {item} you saved from earlier.")

@@ -21,9 +21,9 @@ from _19_rave_ending_room import RaveEndingRoom as Room19
 
 import backpack
 import player
-#import map
+import map
 
-map = map.Map()
+map_object = map.Map()
 backpack = backpack.BackPack()
 player_object = player.Player(backpack)
 room0 = Room0(player_object, "start", 0, south=1)
@@ -37,7 +37,7 @@ room7 = Room7(player_object, "death room waterfall", 7)
 room8 = Room8(player_object, "flower m", 8, south=12)
 room9 = Room9(player_object, "flower y", 9, east=12)
 room10 = Room10(player_object, "death room pit", 10, east=9)
-room11 = Room11(player_object, "witch house", 11, west=12)
+room11 = Room11(player_object, "witch house", 11, south=12)
 room12 = Room12(player_object, "witch garden", 12, west=13)
 room13 = Room13(player_object, "fae encounter", 13, south=14)
 room14 = Room14(player_object, "cross roads puzzle", 14, west=15, south=16, east=15)
@@ -50,7 +50,7 @@ room20 = Room4(player_object, "ending mushroom", 20, south=16)
 
 room_list = [room0, room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12, room13,
              room14, room15, room16, room17, room18, room19, room20]
-current_room = room_list[16]
+current_room = room_list[0]
 
 game_running = True
 restart_game = False
@@ -73,6 +73,7 @@ def game_instructions():
 
 def game_over():
     print("You died :(")
+    map_object.start()
     ask = True
     while ask:
         print("Would you like to start the game again?")
@@ -94,10 +95,12 @@ def game_over():
         else:
             continue
 
+
 def ending():
+    print("")
     print("Thanks for playing!")
     print("Hope you had fun :)")
-    self.map.clear()
+    map_object.start()
     ask = True
     while ask:
         print("Would you like to start the game again?")
@@ -120,35 +123,16 @@ def ending():
             continue
 
 
-def test():
-    backpack.add("c")
-    backpack.add("b")
-    backpack.add("h")
-    backpack.add("j")
-    backpack.add("jb")
-    backpack.add("k")
-    backpack.add("ba")
-    backpack.add("bb")
-    backpack.add("x")
-    backpack.add("y")
-    backpack.add("z")
-    #backpack.add("marigold")
-    backpack.add("yarrow")
-    backpack.add("rope")
-    #backpack.add("scarlet_elf_cup")
-    #backpack.add("fly_agaric")
-    #backpack.add("common_puffball")
-
-
 if __name__ == "__main__":
-    test()
     print(f"Welcome to the game {player_object.name}")
     game_instructions()
 
     while game_running:
         if restart_game:
             backpack.reset()
+            map_object.start()
         restart_game = False
+        map_object.check_off_room(current_room.room_number)
         current_room.room_script()
         item = current_room.room_actions()
         if item is not None:
@@ -162,5 +146,3 @@ if __name__ == "__main__":
                 player_object.add_to_backpack(item)
         if not restart_game:
             current_room = room_list[int(current_room.choose_next_room())]
-
-    print("outside game")

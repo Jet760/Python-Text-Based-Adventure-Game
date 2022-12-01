@@ -44,6 +44,8 @@ class BackPack:
         :param item:
         :return: -1 | False | integer
         """
+        if self.count() < 1:
+            return False
         low = 0
         high = self.count() - 1
         self.sort()
@@ -68,7 +70,7 @@ class BackPack:
                 self._backpack.pop(position)
 
     def get_item_name(self, position):
-        if position is not None or position is not False:
+        if position is not False:
             return self._backpack[position]
         else:
             return False

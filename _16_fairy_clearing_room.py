@@ -8,7 +8,6 @@ class FairyClearingRoom(room.Room):
         self.loop = True
 
     def room_script(self):
-        self.room_north = None
         print("As the sun is starting to get low in the sky you come across another clearing in the trees.")
         print("You spot a tree stump and sit for a rest.")
         input("-press enter to continue-")
@@ -71,41 +70,46 @@ class FairyClearingRoom(room.Room):
                     print("The green fairy reaches out and takes it from you.")
                     self.player.remove_item_from_backpack("scarlet_elf_cup")
                     print('"Follow me!".')
+                    self.room_north = None
                     self.room_south = 18
                     self.update_rooms()
                     self.loop = False
-                mushroom = self.player.find_item_and_return_name("fly_agaric")
-                if mushroom == "fly_agaric":
-                    self.ending = 2
-                    print("You reach into your backpack and pull out the fly agaric that you collected "
-                          "earlier.")
-                    print("The red fairy flutters up to you and takes it from you.")
-                    self.player.remove_item_from_backpack("fly_agaric")
-                    print('"Follow me!!".')
-                    self.room_west = 19
-                    self.update_rooms()
-                    self.loop = False
-                mushroom = self.player.find_item_and_return_name("common_puffball")
-                if mushroom == "common_puffball":
-                    self.ending = 3
-                    print("You reach into your backpack and pull out the common puffball that you collected "
-                          "earlier.")
-                    print("The blue fairy holds her hand out and you give her the mushroom.")
-                    self.player.remove_item_from_backpack("common_puffball")
-                    print('"Follow me".')
-                    self.room_east = 17
-                    self.update_rooms()
-                    self.loop = False
                 else:
-                    print("You shake your head.")
-                    print('"I don\'t have a mushroom" you tell them')
-                    print('"We will wait" the blue fairy says')
-                    print('They all sit and get comfortable.')
-                    print('You stand up with a sigh.')
-                    print('You begin the walk back to the place that had the mushrooms.')
-                    self.room_north = 20
-                    self.update_rooms()
-                    self.loop = False
+                    mushroom = self.player.find_item_and_return_name("fly_agaric")
+                    if mushroom == "fly_agaric":
+                        self.ending = 2
+                        print("You reach into your backpack and pull out the fly agaric that you collected "
+                              "earlier.")
+                        print("The red fairy flutters up to you and takes it from you.")
+                        self.player.remove_item_from_backpack("fly_agaric")
+                        print('"Follow me!!".')
+                        self.room_north = None
+                        self.room_west = 19
+                        self.update_rooms()
+                        self.loop = False
+                    else:
+                        mushroom = self.player.find_item_and_return_name("common_puffball")
+                        if mushroom == "common_puffball":
+                            self.ending = 3
+                            print("You reach into your backpack and pull out the common puffball that you collected "
+                                  "earlier.")
+                            print("The blue fairy holds her hand out and you give her the mushroom.")
+                            self.player.remove_item_from_backpack("common_puffball")
+                            print('"Follow me".')
+                            self.room_east = 17
+                            self.room_north = None
+                            self.update_rooms()
+                            self.loop = False
+                        else:
+                            print("You shake your head.")
+                            print('"I don\'t have a mushroom" you tell them')
+                            print('"We will wait" the blue fairy says')
+                            print('They all sit and get comfortable.')
+                            print('You stand up with a sigh.')
+                            print('You begin the walk back to the place that had the mushrooms.')
+                            self.room_north = 20
+                            self.update_rooms()
+                            self.loop = False
             elif instruct.lower() == "i":
                 self.player.check_backpack()
             else:

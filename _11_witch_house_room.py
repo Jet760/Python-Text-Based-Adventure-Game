@@ -25,6 +25,7 @@ class WitchHouseRoom(room.Room):
         print('"You can talk??" you blurt out')
         print('"Of course I can talk, I\'m a witch\'s cat! not just some regular moggy." he huffs')
         input("-press enter to continue-")
+        print("")
         print(f'"Come {self.player.name}, sit down, the tea is ready!" Kiki says, carrying a'
               f' tray over to the dining table.')
         print('You walk over and sit down')

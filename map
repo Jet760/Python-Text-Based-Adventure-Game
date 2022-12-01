@@ -1,9 +1,0 @@
-[[place][place,x][place]]
-[[place,x][place,x][place]]
-[[place,x][place][place]]
-
-example map^^
-lists for rows
-each room is a list
-add x to room list when room is visited
-TODO: finish this mappppp

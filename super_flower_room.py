@@ -39,7 +39,7 @@ class FlowerRoom(room.Room):
                 self.player.check_backpack()
             else:
                 continue
-            print("You take one last look around at the flowers as follow the path onwards,")
+            print("You take one last look around at the flowers as you follow the path onwards,")
             print("    back into the thick of the forest.")
             input("-press enter to continue-")
             print("")

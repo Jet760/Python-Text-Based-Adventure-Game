@@ -54,6 +54,7 @@ class Room:
         return room_list, direction_list
 
     def choose_next_room(self):
+        self.update_rooms()
         result = ""
         loop = True
         while loop:
@@ -93,5 +94,3 @@ class Room:
 
     def update_rooms(self):
         self.room_list, self.direction_list = self.room_choices()
-
-

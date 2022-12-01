@@ -22,5 +22,4 @@ class StartingRoom(room.Room):
         print("You decide to see if you can walk to the town to get some help.")
         input("-press enter to continue-")
         print("")
-        print(self.room_south)
         self.update_rooms()

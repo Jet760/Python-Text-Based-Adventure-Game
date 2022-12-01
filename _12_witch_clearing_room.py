@@ -71,7 +71,7 @@ class WitchClearingRoom(room.Room):
                         print('"Thank you so much!!"')
                         input("-press enter to continue-")
                         print("")
-                        print('"If you would like you can come inside my cottage for some tea!" she says, beaming')
+                        print('"If you would like, you can come inside my cottage for some tea!" she says, beaming')
                         print('"Just follow this path through the garden EAST and you will find it."')
                         self.player.remove_item_from_backpack(self.flower_name)
                         self.gave_flower = True
